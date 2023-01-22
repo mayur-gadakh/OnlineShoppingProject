@@ -30,7 +30,7 @@ if("added".equals(msg)){
 <h3 class="alert">Product already exist in you cart! Quantity  increased!</h3>
 <%} %>
 <%if("wrong".equals(msg)){ %>
-<h3 class="alert">Smething Went Wrong! Try Again!</h3>
+<h3 class="alert">Something Went Wrong! Try Again!</h3>
 <%} %>
 <table>
         <thead>
