@@ -1,19 +1,27 @@
-
+<%@ page import="Project.connectionProvider"%>
+<%@ page import="java.sql.*" %>
+<%@include file="header.jsp" %>
+<%@include file="footer.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <link rel="stylesheet" href="css/addressPaymentForOrder-style.css">
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <title>Home</title>
+<script >
+if(window.history.forwart(1) !=null)
+	window.history.forwar(1);</script>
 
 </head>
 <body>
 <br>
 <table>
 <thead>
+<%String email1=session.getAttribute("email").toString(); %>
+
 
           <tr>
-          <th scope="col"><a href=""><i class='fas fa-arrow-circle-left'> Back</i></a></th>
+          <th scope="col"><a href="myCart.jsp"><i class='fas fa-arrow-circle-left'> Back</i></a></th>
             <th scope="col" style="background-color: yellow;">Total: <i class="fa fa-inr"></i> </th>
           </tr>
         </thead>
@@ -28,7 +36,15 @@
           </tr>
         </thead>
         <tbody>
+        <%
+        Connection con=connectionProvider.getCon();
+        Statement st=con.createStatement();
+        ResultSet rs=st.executeQuery("");
+        while(rs.next()){
+        	
+        }
         
+        %>
           <tr>
           
            <td></td>
@@ -72,7 +88,7 @@
 </div>
 
 <div class="right-div">
-<h3>Pay online on this btechdays@pay.com</h3>
+<h3>Pay online on this btechdays@ONLINE_SHOPING</h3>
 
 <h3 style="color: red">*If you select online Payment then enter you transaction ID here otherwise leave this blank</h3>
 </div>
