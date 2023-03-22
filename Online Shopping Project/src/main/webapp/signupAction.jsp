@@ -1,5 +1,5 @@
 <%@ page import="Project.connectionProvider"%>
-<%@ page import="java.sql.*" %>
+<%@ page import="java.sql.*"%>
 
 <%
 String name=request.getParameter("name");
@@ -9,7 +9,15 @@ String SecurityQuestion=request.getParameter("SecurityQuestion");
 String answer=request.getParameter("answer");
 String password=request.getParameter("password");
 
+System.out.println(name);
+System.out.println(email);
+System.out.println(mobilenumber);
+System.out.println(SecurityQuestion);
+System.out.println(answer);
+System.out.println(password);
+
 String address="";
+String city="";
 String state="";
 String country="";
 
@@ -18,7 +26,7 @@ String country="";
 try{
 	
 	Connection con=connectionProvider.getCon();
-	PreparedStatement ps=con.prepareStatement("insert into users values(?,?,?,?,?,?,?,?,?)");
+	PreparedStatement ps=con.prepareStatement("insert into users values(?,?,?,?,?,?,?,?,?,?)");
 	ps.setString(1,name);
 	ps.setString(2,email);
 	ps.setString(3,mobilenumber);
@@ -26,8 +34,10 @@ try{
 	ps.setString(5,answer);
 	ps.setString(6,password);
 	ps.setString(7,address);
-	ps.setString(8,state);
-	ps.setString(9,country);
+	ps.setString(8,city);
+	ps.setString(9,state);
+	ps.setString(10,country);
+
 	ps.executeUpdate();
 	
 	

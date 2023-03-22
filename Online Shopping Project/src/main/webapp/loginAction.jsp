@@ -1,5 +1,5 @@
 <%@ page import="Project.connectionProvider"%>
-<%@ page import="java.sql.*" %>
+<%@ page import="java.sql.*"%>
 <% 
 String email=request.getParameter("email");
 String password=request.getParameter("password");
